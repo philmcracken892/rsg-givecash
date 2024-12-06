@@ -115,12 +115,14 @@ RegisterNetEvent('phil-giveCash:client:customAmount', function(data)
         {
             type = 'number',
             label = 'Amount in $',
-            description = 'Enter the amount you want to give',
+            description = 'Enter the amount you want to give (up to 2 decimal places)',
             required = true,
-            min = 1,
-            max = 1000000
+            min = 0.01,
+            max = 1000000,
+            precision = 2  -- Allow up to 2 decimal places
         }
     })
+
 
     if input and input[1] then
         local amount = tonumber(input[1])
